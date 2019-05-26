@@ -7,7 +7,7 @@ The tool needs to be called as a part of the Windows 10 upgrade SCCM task sequen
 WUA is written in PowerShell using WPF and Mahapps framework.
 Mahapps brings Metro style interface to WPF applications. (https://mahapps.com/)
 
-Features
+### Features
 * Add custom company logo/text
 * Customize button text, display text and overall look and feel
 * Display different text based on the connection type (e.g Notify user that the upgrade takes 2 hours on VPN where as 40 mins on LAN)
@@ -16,14 +16,18 @@ Features
 * Customize the timer (e.g Wait for 60 minutes before the upgrade starts)
 * Customize the timer based on if the task sequence deployed as mandatory or available (e.g display 5 mins when the user initiates the deployment from software center or 60 mins if it auto triggers). Note: this needs to be done within the task sequence by running the same script based on the built in task sequence variable _SMSTSUserStarted
 
-Script Parameters
+### Script Parameters
 1. TimerDuration - Displays the countdown after which the upgrade starts. (Default: 10 minutes)
 2. AutoCloseDuration - Time in minutes after which the application auto closes and exits (Default: 60 minutes)
 3. LogFile - By default the log file is created under C:\Logs
 
-Below is the code structure:
+### Code Structure
 * assembly\ and resources\ - contains Mahapps binaries
 * ErrorCodes.csv - Format: ErroCode, ErrorMessage
 Contains the pre-requiste check error codes and the text to be disaplyed in the form. The script will fail with these error codes which are returned to the task sequence that help to identify if the upgrade was cancelled and if it was due to a pre-requisite failure. When a new pre-requisite check funtion is added the respective error codes and the error messages must be added in this file. The starting error code is 10000. The pre-requisite error codes are added to 10000 (e.g 10001 - Power adapter check failure)
 * WindowsUpgradeAssistant.ps1 - Contains all the logic of the tool 
 * WindowsUpgradeAssistant.xaml - Contains the formatting and the look and feel of the form defined in XAML. 
+
+Light theme  (Pre-reqs not met)        |  Dark theme
+:-------------------------:|:-------------------------:
+![image](images/Light-PreReqNotMet.png) | ![image](images/Dark-PreReqMet.png)
