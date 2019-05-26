@@ -30,4 +30,4 @@ Contains the pre-requiste check error codes and the text to be disaplyed in the 
 
 Light theme  (Pre-reqs not met)        |  Dark theme
 :-------------------------:|:-------------------------:
-![image](images/Light-PreReqNotMet.png) | ![image](images/Dark-PreReqMet.png)
+![image](Images/LightPreReqNotMet.png) | ![image](Images/DarkPreReqMet.png)
