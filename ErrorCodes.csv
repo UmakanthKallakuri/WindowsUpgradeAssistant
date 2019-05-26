@@ -1,0 +1,4 @@
+ErrorCode,ErrorMessage
+1,Power adapter not connected
+2,Free disk space less than 20 GB
+4,Something else
